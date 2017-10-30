@@ -3,7 +3,7 @@ module.exports = {
 `
 /**
  * Generated With Arch CLI
- * https://github.com/gedeagas/react-native-arch
+ * https://github.com/Archipelcorp/archrn-cli
  * @flow
  */
 `,
