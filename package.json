@@ -1,0 +1,45 @@
+{
+  "name": "archrn-cli",
+  "version": "2.0.9",
+  "description": "\"Package for your kickstarting your react-native project\"",
+  "main": "lib/arch.js",
+  "bin": {
+    "archrn": "lib/arch.js"
+  },
+  "preferGlobal": true,  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "esw src",
+    "clean": "rm -rf lib && mkdir lib",
+    "prepublish": "node_modules/.bin/babel src --out-dir lib",
+    "build-arch": "node_modules/.bin/babel src --out-dir lib",
+    "build": "npm run clean && npm run build-arch"
+  },
+  "author": "Agastya Darma Laksana <agastyadrm@naver.com>",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.11.0"
+  },
+  "files": [
+    "README.md",
+    "src",
+    "lib"
+  ],
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-2"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "prettier-eslint": "^8.2.1",
+    "babel-cli": "^6.14.0",
+    "babel-core": "^6.14.0",
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-2": "^6.13.0",
+    "eslint": "^3.18.0",
+    "eslint-watch": "^3.0.1"
+  }
+}
