@@ -21,41 +21,31 @@ process.exit(1);
 
 if(pkgs[0] == 'component'){
     if(pkgs.length>=2 && pkgs.length<=3){
-        
+        var stream = null;
         if(program.filename){
-            var stream = fs.createWriteStream(pkgs[2]);
-            stream.once('open', (fd) => {
-                stream.write(newComponent.comment);            
-                stream.write(newComponent.head);
-                stream.write(
-                    `export default class ${pkgs[1]} extends Component<{}> { 
-                    `
-                )
-                stream.write(newComponent.body);
-                stream.write(newComponent.tail);
-                
-                // Close the stream
-                stream.end();
-            });
-        
+            stream = fs.createWriteStream(pkgs[2]);
+        } else {
+            stream = fs.createWriteStream(pkgs[1] + '.js');            
+        }
+
+        stream.once('open', (fd) => {
+            stream.write(newComponent.comment);                        
+            stream.write(newComponent.head);
+            stream.write(
+                `export default class ${pkgs[1]} extends Component<{}> { 
+                `
+            )
+            stream.write(newComponent.body);            
+            stream.write(newComponent.tail);
+            
+            // Close the stream
+            stream.end();
+        });
+        if(program.filename){
             console.log(' ✔ NEW '.green + `react-native component with class name ${pkgs[1].inverse} is generated on ${pkgs[2].italic} file`);
         } else {
-            var stream = fs.createWriteStream(pkgs[1] + ".js");  
-            stream.once('open', (fd) => {
-                stream.write(newComponent.comment);                        
-                stream.write(newComponent.head);
-                stream.write(
-                    `export default class ${pkgs[1]} extends Component<{}> { 
-                    `
-                )
-                stream.write(newComponent.body);            
-                stream.write(newComponent.tail);
-                
-                // Close the stream
-                stream.end();
-            });
-        
-            console.log(' ✔ NEW '.green + `react-native component with class name ${pkgs[1].inverse} is generated on ${pkgs[1].italic}.js file`);      
+            console.log(' ✔ NEW '.green + `react-native component with class name ${pkgs[1].inverse} is generated on ${pkgs[1].italic}.js file`);
+            
         }
         
     } else {

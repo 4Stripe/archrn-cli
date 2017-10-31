@@ -1,6 +1,6 @@
 {
   "name": "archrn-cli",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "description": "\"Package for your kickstarting your react-native project\"",
   "main": "lib/arch.js",
   "bin": {
