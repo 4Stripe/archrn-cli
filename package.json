@@ -15,6 +15,10 @@
     "build-arch": "node_modules/.bin/babel src --out-dir lib",
     "build": "npm run clean && npm run build-arch"
   },
+  "repository" :
+  { "type" : "git", 
+    "url" : "https://github.com/Archipelcorp/archrn-cli"
+  },
   "author": "Agastya Darma Laksana <agastyadrm@naver.com>",
   "license": "ISC",
   "dependencies": {
