@@ -1,10 +1,10 @@
 {
   "name": "archrn-cli",
-  "version": "2.2.0",
+  "version": "2.3.2",
   "description": "\"Package for your kickstarting your react-native project\"",
-  "main": "lib/arch.js",
+  "main": "lib/archrn.js",
   "bin": {
-    "archrn": "lib/arch.js"
+    "archrn": "lib/archrn.js"
   },
   "preferGlobal": true,  
   "scripts": {
@@ -31,7 +31,8 @@
     "pkg-versions": "^1.1.0",
     "prompt": "^1.0.0",
     "ramda": "^0.25.0",
-    "semver": "^5.4.1"
+    "semver": "^5.4.1",
+    "babel-runtime": "^6.26.0"    
   },
   "files": [
     "README.md",
